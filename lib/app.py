@@ -15,16 +15,15 @@ class Contact(BasesModel):
   entrydate = CharField()
   name = CharField()
   address = CharField()
-  # phone = IntegerField()
+  phone = CharField()
 
 
 db.connect()
 db.drop_tables([Contact])
 db.create_tables([Contact])
 
-contact = Contact(entrydate=date(2020, 3, 23), name="Dennis", address="12250 Pinyon lane")
-contact.save()
-
+# contact = Contact(entrydate=date(2020, 3, 23), name="Dennis", address="12250 Pinyon lane", p)
+# contact.save()
 
 
 parser = argparse.ArgumentParser(description="Save a collection of contacts")
@@ -47,7 +46,7 @@ Welcome to Your Contact Book
 print(ui)
 
 def add_contact():
-  add_contact = Contact(entrydate=input("Enter entry date: "),  name=input("Enter contact name: "), address=input("Enter contact adddress: "))
+  add_contact = Contact(entrydate=input("Enter entry date: "),  name=input("Enter contact name: "), address=input("Enter contact adddress: "), phone=input("Enter contact phone number: "))
   add_contact.save()
 
 
