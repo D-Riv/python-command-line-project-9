@@ -49,14 +49,29 @@ def add_contact():
   add_contact = Contact(entrydate=input("Enter entry date: "),  name=input("Enter contact name: "), address=input("Enter contact adddress: "), phone=input("Enter contact phone number: "))
   add_contact.save()
 
+def view_contact():
+  contact_list = Contact.select().where(Contact.name)
+  print(contact_list[0].name)
+  # my_table = db.read_sql('select * from contact', connection)
+
+def search_contact():
+  user_input = input("""
+  Search for a Specific Contact
+  Search by date, name, address, or phone number
+  Enter here: 
+  """)
+
+  search = Contact.get(Contact.name == user_input)
+  print(search.name)
+
 
 user_res = int(input("Select: "))
 if user_res == 1: 
   add_contact()
-# elif user-res == 2: 
-#   view-contact()
-# elif user-res == 3: 
-#   search-contat()
+elif user_res == 2: 
+  view_contact()
+elif user_res == 3: 
+  search_contact()
 # elif user-res == 4: 
 #   update-contact()
 # elif user-res == 5: 
