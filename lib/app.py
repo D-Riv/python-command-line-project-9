@@ -69,24 +69,29 @@ while in_book == True:
     # my_table = db.read_sql('select * from contact', connection)
 
   def search_contact():
-    user_input = str(input("""
+    # user_input = input("""
+    # Search for a Specific Contact
+    # Search by date, name, address, or phone number
+    # Enter here: """)
+
+    user_input = input("""
     Search for a Specific Contact
-    Search by date, name, address, or phone number
-    Enter here: """))
+    Search by name
+    Enter here: """)
 
     search = Contact.get(Contact.name == user_input)
-    search2 = Contact.get(Contact.entrydate == user_input)
-    search3 = Contact.get(Contact.address == user_input)
-    search4 = Contact.get(Contact.phone == user_input)
+    # search2 = Contact.get(Contact.entrydate == user_input)
+    # search3 = Contact.get(Contact.address == user_input)
+    # search4 = Contact.get(Contact.phone == user_input)
 
     if search:
       print(f"\n Entry Date: {search.entrydate}\n Contact Name: {search.name}\n Contact Address: {search. address}\n Contact Phone Number: {search.phone}")
-    elif search2:
-      print(f"\n Entry Date: {search2.entrydate}\n Contact Name: {search2.name}\n Contact Address: {search2. address}\n Contact Phone Number: {search2.phone}")
-    elif search3: 
-      print(f"\n Entry Date: {search3.entrydate}\n Contact Name: {search3.name}\n Contact Address: {search3. address}\n Contact Phone Number: {search3.phone}")
-    elif search4: 
-      print(f"\n Entry Date: {search4.entrydate}\n Contact Name: {search4.name}\n Contact Address: {search4. address}\n Contact Phone Number: {search4.phone}")
+    # elif search2:
+    #   print(f"\n Entry Date: {search2.entrydate}\n Contact Name: {search2.name}\n Contact Address: {search2. address}\n Contact Phone Number: {search2.phone}")
+    # elif search3: 
+    #   print(f"\n Entry Date: {search3.entrydate}\n Contact Name: {search3.name}\n Contact Address: {search3. address}\n Contact Phone Number: {search3.phone}")
+    # elif search4: 
+    #   print(f"\n Entry Date: {search4.entrydate}\n Contact Name: {search4.name}\n Contact Address: {search4. address}\n Contact Phone Number: {search4.phone}")
 
 
   user_res = int(input("Select: "))
