@@ -54,17 +54,18 @@ while in_book == True:
     add_contact = Contact(entrydate=input("Enter entry date: "),  name=input("Enter contact name: "), address=input("Enter contact adddress: "), phone=input("Enter contact phone number: "))
     add_contact.save()
     print(ui)
-    user_res = int(input("Select: "))
-    if user_res == 1: 
-      add_contact()
-    elif user_res == 2: 
-      view_contact()
-    elif user_res == 3: 
-      search_contact()
+    # user_res = int(input("Select: "))
+    # if user_res == 1: 
+    #   add_contact()
+    # elif user_res == 2: 
+    #   view_contact()
+    # elif user_res == 3: 
+    #   search_contact()
 
   def view_contact():
     contact_list = Contact.select()
-    print(f"\n Entry Date: {contact_list[0].entrydate}\n Contact Name: {contact_list[0].name}\n Contact Address: {contact_list[0].address}\n Contact Phone Number: {contact_list[0].phone}\n")
+    for contact in list(contact_list): 
+      print(f"\n Entry Date: {contact.entrydate}\n Contact Name: {contact.name}\n Contact Address: {contact.address}\n Contact Phone Number: {contact.phone}\n")
     # my_table = db.read_sql('select * from contact', connection)
 
   def search_contact():
