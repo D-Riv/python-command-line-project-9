@@ -12,7 +12,7 @@ class BasesModel(Model):
     database = db
 
 class Contact(BasesModel):
-  entrydate = DateField()
+  entrydate = CharField()
   name = CharField()
   address = CharField()
   # phone = IntegerField()
@@ -46,8 +46,8 @@ Welcome to Your Contact Book
 """
 print(ui)
 
-def addcontact(self):
-  add_contact = Contact(entrydate=date(input()),  name=input(), address=input())
+def add_contact():
+  add_contact = Contact(entrydate=input("Enter entry date: "),  name=input("Enter contact name: "), address=input("Enter contact adddress: "))
   add_contact.save()
 
 
