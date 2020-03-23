@@ -33,50 +33,63 @@ args = parser.parse_args()
 if __name__ == '__main__':
     args = parser.parse_args()
 
-ui = """
-Welcome to Your Contact Book 
+in_book = True
 
-1. Add new contacts
-2. View contact list
-3. Search contact list
-4. Update contact list 
-5. Delete contaact list
-6. Exit application
-"""
-print(ui)
-
-def add_contact():
-  add_contact = Contact(entrydate=input("Enter entry date: "),  name=input("Enter contact name: "), address=input("Enter contact adddress: "), phone=input("Enter contact phone number: "))
-  add_contact.save()
-
-def view_contact():
-  contact_list = Contact.select().where(Contact.name)
-  print(contact_list[0].name)
-  # my_table = db.read_sql('select * from contact', connection)
-
-def search_contact():
-  user_input = input("""
-  Search for a Specific Contact
-  Search by date, name, address, or phone number
-  Enter here: 
-  """)
-
-  search = Contact.get(Contact.name == user_input)
-  print(search.name)
+while in_book == True: 
 
 
-user_res = int(input("Select: "))
-if user_res == 1: 
-  add_contact()
-elif user_res == 2: 
-  view_contact()
-elif user_res == 3: 
-  search_contact()
-# elif user-res == 4: 
-#   update-contact()
-# elif user-res == 5: 
-#   remove-contact()
-# elif user-res == 6: 
-#   close-contact()
-# else :
-#   print("Not an option sorry")
+  ui = """
+  Welcome to Your Contact Book 
+
+  1. Add new contacts
+  2. View contact list
+  3. Search contact list
+  4. Update contact list 
+  5. Delete contact list
+  6. Exit application
+  """
+  print(ui)
+
+  def add_contact():
+    add_contact = Contact(entrydate=input("Enter entry date: "),  name=input("Enter contact name: "), address=input("Enter contact adddress: "), phone=input("Enter contact phone number: "))
+    add_contact.save()
+    print(ui)
+    user_res = int(input("Select: "))
+    if user_res == 1: 
+      add_contact()
+    elif user_res == 2: 
+      view_contact()
+    elif user_res == 3: 
+      search_contact()
+
+  def view_contact():
+    contact_list = Contact.select().where(Contact.name)
+    print(contact_list[0].name)
+    # my_table = db.read_sql('select * from contact', connection)
+
+  def search_contact():
+    user_input = str(input("""
+    Search for a Specific Contact
+    Search by date, name, address, or phone number
+    Enter here: """))
+
+    search = Contact.get(Contact.name == user_input)
+    if search:
+      print(f"\n Entry Date: {search.entrydate}\n Contact Name: {search.name}\n Contact Address: {search. address}\n Contact Phone Number: {search.phone}")
+
+
+  user_res = int(input("Select: "))
+  if user_res == 1: 
+    add_contact()
+  elif user_res == 2: 
+    view_contact()
+  elif user_res == 3: 
+    search_contact()
+  # elif user-res == 4: 
+  #   update-contact()
+  # elif user-res == 5: 
+  #   remove-contact()
+  # elif user-res == 6: 
+  #   close-contact()
+  # else :
+  #   print("Not an option sorry")
