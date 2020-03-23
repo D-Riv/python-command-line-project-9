@@ -1,5 +1,9 @@
+from peewee import *
 
+db = PostgresqlDatabase('contactbook', user='DRivera', password='',
+                        host='localhost', port=5432)
 
+db.connect()
 
 
 
