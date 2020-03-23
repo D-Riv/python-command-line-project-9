@@ -63,8 +63,8 @@ while in_book == True:
       search_contact()
 
   def view_contact():
-    contact_list = Contact.select().where(Contact.name)
-    print(contact_list[0].name)
+    contact_list = Contact.select()
+    print(f"\n Entry Date: {contact_list[0].entrydate}\n Contact Name: {contact_list[0].name}\n Contact Address: {contact_list[0].address}\n Contact Phone Number: {contact_list[0].phone}\n")
     # my_table = db.read_sql('select * from contact', connection)
 
   def search_contact():
@@ -74,7 +74,17 @@ while in_book == True:
     Enter here: """))
 
     search = Contact.get(Contact.name == user_input)
+    search2 = Contact.get(Contact.entrydate == user_input)
+    search3 = Contact.get(Contact.address == user_input)
+    search4 = Contact.get(Contact.phone == user_input)
+
     if search:
+      print(f"\n Entry Date: {search.entrydate}\n Contact Name: {search.name}\n Contact Address: {search. address}\n Contact Phone Number: {search.phone}")
+    elif search2:
+      print(f"\n Entry Date: {search.entrydate}\n Contact Name: {search.name}\n Contact Address: {search. address}\n Contact Phone Number: {search.phone}")
+    elif search3: 
+      print(f"\n Entry Date: {search.entrydate}\n Contact Name: {search.name}\n Contact Address: {search. address}\n Contact Phone Number: {search.phone}")
+    elif search4: 
       print(f"\n Entry Date: {search.entrydate}\n Contact Name: {search.name}\n Contact Address: {search. address}\n Contact Phone Number: {search.phone}")
 
 
