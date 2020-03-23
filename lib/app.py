@@ -82,11 +82,11 @@ while in_book == True:
     if search:
       print(f"\n Entry Date: {search.entrydate}\n Contact Name: {search.name}\n Contact Address: {search. address}\n Contact Phone Number: {search.phone}")
     elif search2:
-      print(f"\n Entry Date: {search.entrydate}\n Contact Name: {search.name}\n Contact Address: {search. address}\n Contact Phone Number: {search.phone}")
+      print(f"\n Entry Date: {search2.entrydate}\n Contact Name: {search2.name}\n Contact Address: {search2. address}\n Contact Phone Number: {search2.phone}")
     elif search3: 
-      print(f"\n Entry Date: {search.entrydate}\n Contact Name: {search.name}\n Contact Address: {search. address}\n Contact Phone Number: {search.phone}")
+      print(f"\n Entry Date: {search3.entrydate}\n Contact Name: {search3.name}\n Contact Address: {search3. address}\n Contact Phone Number: {search3.phone}")
     elif search4: 
-      print(f"\n Entry Date: {search.entrydate}\n Contact Name: {search.name}\n Contact Address: {search. address}\n Contact Phone Number: {search.phone}")
+      print(f"\n Entry Date: {search4.entrydate}\n Contact Name: {search4.name}\n Contact Address: {search4. address}\n Contact Phone Number: {search4.phone}")
 
 
   user_res = int(input("Select: "))
