@@ -1,5 +1,6 @@
 from peewee import *
 from datetime import date
+import argparse
 
 db = PostgresqlDatabase('contactbook', user='DRivera', password='',
                         host='localhost', port=5432)
@@ -13,6 +14,8 @@ class BasesModel(Model):
 class Contact(BasesModel):
   entrydate = DateField()
   name = CharField()
+  address = CharField()
+  phone = IntegerField()
 
 
 db.connect()
@@ -23,10 +26,6 @@ contact = Contact(entrydate=date(2020, 3, 23), name="Dennis")
 contact.save()
 
 
-
-
-
-
 ui = """
 1. Add new contacts
 2. View contact list
@@ -35,3 +34,10 @@ ui = """
 5. Delete contaact list
 6. Exit application
 """
+
+user-res = int(input("Select: "))
+if user-res == 1: 
+  add-contact()
+
+def add-contact(self):
+  add-contact = Contact(entrydate=date())
