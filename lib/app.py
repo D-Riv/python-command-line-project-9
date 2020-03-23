@@ -44,8 +44,8 @@ while in_book == True:
   1. Add new contacts
   2. View contact list
   3. Search contact list
-  # 4. Update contact list 
-  # 5. Delete contact list
+  # Coming soon( Update contact list )
+  # Coming soon ( Delete contact list ) 
   4. Exit application
   """
   print(ui)
