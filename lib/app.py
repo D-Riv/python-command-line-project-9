@@ -44,9 +44,9 @@ while in_book == True:
   1. Add new contacts
   2. View contact list
   3. Search contact list
-  4. Update contact list 
-  5. Delete contact list
-  6. Exit application
+  # 4. Update contact list 
+  # 5. Delete contact list
+  4. Exit application
   """
   print(ui)
 
@@ -96,8 +96,9 @@ while in_book == True:
     view_contact()
   elif user_res == 3: 
     search_contact()
-  # elif user-res == 4: 
-  #   update-contact()
+  elif user_res == 4: 
+    print("Thanks for using the contact book, please come again")
+    break
   # elif user-res == 5: 
   #   remove-contact()
   # elif user-res == 6: 
