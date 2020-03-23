@@ -6,12 +6,13 @@
 
 Use this simple contacts book keeper to keep track of all your friends and loved ones right from within the terminal!
 
-#Required Installation
-*Python
-*pipenv
-*PostgreSQL
-*peewee
-\*psycopg2
+# Required Installation
+
+- Python
+- pipenv
+- PostgreSQL
+- peewee
+- psycopg2
 
 # Run Application
 
